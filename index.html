@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A.r CODEX</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#0b1020;color:#eef2ff}
+header{height:300px;background:linear-gradient(180deg,rgba(7,10,20,.18),#0b1020),url("2.jpg") center/cover;display:flex;align-items:end;padding:35px}
+header h1{font-size:48px;margin:0;text-shadow:0 4px 20px #000}
+main{max-width:1200px;margin:auto;padding:28px}
+.top{display:flex;gap:15px;align-items:center;justify-content:space-between;margin-bottom:25px}
+input{width:min(500px,100%);padding:15px;border-radius:12px;border:1px solid #334155;background:#111827;color:white;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{position:relative;background:#121a2d;border:1px solid #26334d;border-radius:18px;padding:20px;box-shadow:0 10px 30px #0005;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#64748b}
+.card img{width:54px;height:54px;object-fit:contain;background:#fff;border-radius:12px;padding:5px}
+.tag{position:absolute;top:18px;left:18px;color:#86efac;font-size:12px;font-weight:bold}
+.card h2{margin:15px 0 8px} .card p{color:#aab5ca;min-height:44px;line-height:1.7}
+.actions{display:flex;gap:8px} button,.download{border:0;border-radius:10px;padding:11px 14px;cursor:pointer;text-decoration:none;font-weight:bold}
+button{background:#26344e;color:white} .download{background:#22c55e;color:#06130a}
+.modal{display:none;position:fixed;inset:0;background:#0009;align-items:center;justify-content:center;padding:20px}
+.box{max-width:550px;width:100%;background:#121a2d;border:1px solid #334155;border-radius:18px;padding:25px;box-shadow:0 20px 70px #000}
+.close{float:left;background:#334155} .details{line-height:2;color:#cbd5e1}
+</style>
+</head>
+<body>
+<header><h1>A.r CODEX</h1></header>
+<main>
+<div class="top"><h2>Python Games</h2><input id="search" placeholder="جستجوی بازی..." oninput="filterCards()"></div>
+<div class="grid" id="grid">
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>Snake</h2>
+      <p>بازی مار کلاسیک با کنترل کیبورد</p>
+      <div class="actions">
+        <button onclick="showDetails('snake.py')">جزئیات</button>
+        <a class="download" href="snake.py" download>Download</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>Tic Tac Toe</h2>
+      <p>دوز دو نفره روی یک صفحه ۳×۳</p>
+      <div class="actions">
+        <button onclick="showDetails('tictactoe.py')">جزئیات</button>
+        <a class="download" href="tictactoe.py" download>Download</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>Pong</h2>
+      <p>پینگ‌پنگ کلاسیک مقابل هوش مصنوعی ساده</p>
+      <div class="actions">
+        <button onclick="showDetails('pong.py')">جزئیات</button>
+        <a class="download" href="pong.py" download>Download</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>Flappy</h2>
+      <p>پرواز بین لوله‌ها و ثبت رکورد</p>
+      <div class="actions">
+        <button onclick="showDetails('flappy.py')">جزئیات</button>
+        <a class="download" href="flappy.py" download>Download</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>Breakout</h2>
+      <p>شکستن آجرها با توپ</p>
+      <div class="actions">
+        <button onclick="showDetails('breakout.py')">جزئیات</button>
+        <a class="download" href="breakout.py" download>Download</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>Space Shooter</h2>
+      <p>شلیک به دشمنان فضایی</p>
+      <div class="actions">
+        <button onclick="showDetails('space_shooter.py')">جزئیات</button>
+        <a class="download" href="space_shooter.py" download>Download</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>Memory</h2>
+      <p>پیدا کردن جفت کارت‌ها</p>
+      <div class="actions">
+        <button onclick="showDetails('memory.py')">جزئیات</button>
+        <a class="download" href="memory.py" download>Download</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>Minesweeper</h2>
+      <p>کشف خانه‌ها بدون برخورد با مین</p>
+      <div class="actions">
+        <button onclick="showDetails('minesweeper.py')">جزئیات</button>
+        <a class="download" href="minesweeper.py" download>Download</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>2048</h2>
+      <p>ترکیب اعداد تا رسیدن به 2048</p>
+      <div class="actions">
+        <button onclick="showDetails('game2048.py')">جزئیات</button>
+        <a class="download" href="game2048.py" download>Download</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="py.ico" onerror="this.style.visibility='hidden'">
+      <div class="tag">FREE</div>
+      <h2>Boxing</h2>
+      <p>مبارزه ساده بازیکن با CPU</p>
+      <div class="actions">
+        <button onclick="showDetails('boxing.py')">جزئیات</button>
+        <a class="download" href="boxing.py" download>Download</a>
+      </div>
+    </article></div>
+</main>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+<div class="box"><button class="close" onclick="closeModal()">بستن</button><div id="detail"></div></div>
+</div>
+<script>
+const data={"snake.py": {"title": "Snake", "desc": "بازی مار کلاسیک با کنترل کیبورد", "controls": "کنترل با کلیدهای جهت‌دار", "features": "امتیازگیری و افزایش طول مار"}, "tictactoe.py": {"title": "Tic Tac Toe", "desc": "دوز دو نفره روی یک صفحه ۳×۳", "controls": "دو بازیکن", "features": "تشخیص برد و مساوی"}, "pong.py": {"title": "Pong", "desc": "پینگ‌پنگ کلاسیک مقابل هوش مصنوعی ساده", "controls": "W / S", "features": "امتیاز، توپ و حریف خودکار"}, "flappy.py": {"title": "Flappy", "desc": "پرواز بین لوله‌ها و ثبت رکورد", "controls": "Space", "features": "فیزیک ساده و امتیاز"}, "breakout.py": {"title": "Breakout", "desc": "شکستن آجرها با توپ", "controls": "Left / Right", "features": "توپ، تخته و مراحل آجرها"}, "space_shooter.py": {"title": "Space Shooter", "desc": "شلیک به دشمنان فضایی", "controls": "Left / Right / Space", "features": "دشمن، گلوله و امتیاز"}, "memory.py": {"title": "Memory", "desc": "پیدا کردن جفت کارت‌ها", "controls": "Mouse", "features": "۱۶ کارت و جفت‌سازی"}, "minesweeper.py": {"title": "Minesweeper", "desc": "کشف خانه‌ها بدون برخورد با مین", "controls": "Mouse", "features": "شبکه ۹×۹ و ۱۰ مین"}, "game2048.py": {"title": "2048", "desc": "ترکیب اعداد تا رسیدن به 2048", "controls": "Arrow Keys", "features": "حرکت و ادغام اعداد"}, "boxing.py": {"title": "Boxing", "desc": "مبارزه ساده بازیکن با CPU", "controls": "Mouse", "features": "نوار سلامتی و ضربه"}};
+function showDetails(file){
+ const d=data[file];
+ document.getElementById('detail').innerHTML=`<h2>${d.title}</h2><p>${d.desc}</p><div class="details"><b>فایل:</b> ${file}<br><b>کنترل:</b> ${d.controls}<br><b>قابلیت‌ها:</b> ${d.features}<br><b>قیمت:</b> رایگان</div><br><a class="download" href="${file}" download>دانلود فایل Python</a>`;
+ document.getElementById('modal').style.display='flex';
+}
+function closeModal(){document.getElementById('modal').style.display='none'}
+function filterCards(){
+ const q=document.getElementById('search').value.toLowerCase();
+ document.querySelectorAll('.card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none');
+}
+</script>
+</body></html>
