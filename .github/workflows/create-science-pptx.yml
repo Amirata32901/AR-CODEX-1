@@ -1,0 +1,29 @@
+name: Build Science 6 Presentation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'make_science_presentation.py'
+      - '.github/workflows/create-science-pptx.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install python-pptx
+        run: pip install python-pptx
+      - name: Generate presentation
+        run: python make_science_presentation.py
+      - name: Commit PowerPoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Oloom6_Nature_to_Paper_11_Slides.pptx
+          git diff --cached --quiet || git commit -m "Add 11-slide Science 6 presentation"
+          git push
