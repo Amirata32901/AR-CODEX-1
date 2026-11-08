@@ -1,0 +1,25 @@
+name: Build PowerPoint presentation
+on:
+  push:
+    paths:
+      - 'generate_presentation.py'
+      - '.github/workflows/build-presentation.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install python-pptx
+      - run: python generate_presentation.py
+      - name: Commit presentation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Amirata_Introduction.pptx
+          git diff --cached --quiet || (git commit -m "Add Amirata PowerPoint presentation" && git push)
