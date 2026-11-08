@@ -1,4 +1,4 @@
-name: Build Science Presentation
+name: Build Animated Science Presentation
 on:
   push:
     paths:
@@ -17,10 +17,10 @@ jobs:
           python-version: "3.11"
       - name: Install PowerPoint library
         run: pip install python-pptx
-      - name: Generate 11-slide presentation
+      - name: Generate 20-slide presentation
         run: python generate_science_ppt.py
       - name: Commit presentation
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Add 11-slide Science 6 presentation"
+          commit_message: "Add detailed animated 20-slide Science 6 presentation"
           file_pattern: "*.pptx"
