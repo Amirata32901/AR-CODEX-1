@@ -1,0 +1,26 @@
+name: Build Science Presentation
+on:
+  push:
+    paths:
+      - "generate_science_ppt.py"
+      - ".github/workflows/build-science-presentation.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install PowerPoint library
+        run: pip install python-pptx
+      - name: Generate 11-slide presentation
+        run: python generate_science_ppt.py
+      - name: Commit presentation
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Add 11-slide Science 6 presentation"
+          file_pattern: "*.pptx"
