@@ -18,12 +18,12 @@ jobs:
           python-version: '3.11'
       - name: Install python-pptx
         run: pip install python-pptx
-      - name: Generate presentation
+      - name: Generate 12-slide animated presentation
         run: python make_science_presentation.py
       - name: Commit PowerPoint
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Oloom6_Nature_to_Paper_11_Slides.pptx
-          git diff --cached --quiet || git commit -m "Add 11-slide Science 6 presentation"
+          git add KAR_KHANE_KAGHAZSAZI_12_SLIDES_ANIMATED.pptx
+          git diff --cached --quiet || git commit -m "Add animated 12-slide paper factory presentation"
           git push
