@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>علوم ششم | سفر به اعماق زمین</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800;900&display=swap');
+:root{--navy:#071a33;--blue:#123c62;--cyan:#42c8e8;--orange:#ff9f43;--white:#f5f8ff}
+*{box-sizing:border-box}body{margin:0;background:#030d1b;color:var(--white);font-family:Vazirmatn,Tahoma,sans-serif;overflow:hidden}
+.deck{height:100svh;width:100%;position:relative;background:radial-gradient(ellipse at 80% 15%,#16476a 0,transparent 35%),linear-gradient(135deg,#061326,#0b2542 60%,#061326)}
+.slide{position:absolute;inset:0;padding:clamp(25px,6vw,80px);display:flex;flex-direction:column;justify-content:center;opacity:0;transform:translateX(55px) scale(.98);pointer-events:none;transition:.65s cubic-bezier(.2,.8,.2,1);overflow:auto}
+.slide.active{opacity:1;transform:none;pointer-events:auto}
+.kicker{color:var(--orange);font-weight:800;letter-spacing:.5px;font-size:clamp(13px,2vw,18px)}
+h1{font-size:clamp(38px,7vw,82px);line-height:1.25;margin:14px 0}
+h2{font-size:clamp(28px,4.6vw,54px);margin:12px 0 24px}
+p,li{font-size:clamp(17px,2.2vw,25px);line-height:2}
+p{max-width:950px}.accent{color:var(--orange)}.cyan{color:var(--cyan)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:16px}
+.card{background:linear-gradient(145deg,#15395bdb,#0b2038db);border:1px solid #5fc9e633;border-radius:22px;padding:20px;box-shadow:0 12px 35px #0004;animation:rise .7s both}
+.card b{color:var(--orange);font-size:1.12em}.card p{font-size:clamp(15px,1.7vw,20px);margin:8px 0 0}
+.earth{width:min(43vw,340px);aspect-ratio:1;border-radius:50%;margin:20px auto;background:radial-gradient(circle at 35% 30%,#6be0fa,#1b75a7 34%,#0c355b 65%,#ff9f43 66%,#e95d32 73%,#f5c56d 74%,#a94b2c 81%,#071326 82%);box-shadow:0 0 65px #3ac9ff55;animation:float 5s ease-in-out infinite}
+.layers{display:flex;gap:10px;align-items:stretch;margin-top:18px;flex-wrap:wrap}
+.layer{flex:1;min-width:125px;padding:22px 12px;border-radius:18px;text-align:center;font-weight:800;background:linear-gradient(150deg,#ffb35f,#d95d37);color:#18243a;animation:rise .7s both}
+.layer:nth-child(2){background:linear-gradient(150deg,#ffdb91,#e88942)}.layer:nth-child(3){background:linear-gradient(150deg,#73d7ed,#237aa7);color:#04182c}
+.controls{position:fixed;bottom:18px;left:22px;right:22px;display:flex;justify-content:space-between;align-items:center;z-index:5;pointer-events:none}
+.controls button{pointer-events:auto;border:1px solid #ffffff33;background:#102c49;color:white;border-radius:13px;padding:11px 18px;font:600 15px Vazirmatn;cursor:pointer}
+.controls button:hover{background:var(--orange);color:#17243a}.count{font-weight:800;color:#d8e8f5;background:#061326bb;padding:8px 14px;border-radius:20px}
+.progress{position:fixed;top:0;right:0;height:4px;background:var(--orange);width:8.33%;transition:width .4s;z-index:10}
+ul{padding-right:26px}.note{border-right:4px solid var(--orange);padding:8px 18px;background:#ff9f4312;border-radius:12px;margin-top:18px}
+.small{font-size:15px;color:#b7cce0}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-12px) rotate(4deg)}}
+@media(max-width:600px){.slide{padding:24px 20px 80px}.earth{width:55vw}.controls button{padding:9px 12px}.grid{grid-template-columns:1fr 1fr}.card{padding:14px}}
+</style>
+</head>
+<body><div class="deck">
+<div class="progress" id="progress"></div>
+<section class="slide active">
+<div class="kicker">علوم تجربی • پایه ششم • درس چهارم</div>
+<h1>سفر به <span class="accent">اعماق زمین</span></h1>
+<p>از سطحی که روی آن زندگی می‌کنیم تا مرکز شگفت‌انگیز زمین؛ با هم به درون سیاره‌مان سفر می‌کنیم.</p>
+<div class="earth"></div><div class="small">برای جابه‌جایی از کلیدهای جهت‌نما یا دکمه‌های پایین استفاده کن.</div>
+</section>
+<section class="slide"><div class="kicker">۱ • شروع سفر</div><h2>آیا می‌توانیم درون زمین را ببینیم؟</h2>
+<p>انسان نمی‌تواند تا مرکز زمین حفاری کند؛ پس دانشمندان برای شناخت بخش‌های درونی زمین از روش‌های علمی، به‌ویژه بررسی <b class="cyan">امواج لرزه‌ای</b> استفاده می‌کنند.</p>
+<div class="grid"><div class="card"><b>سطح زمین</b><p>جایی که انسان‌ها، جانوران و گیاهان زندگی می‌کنند.</p></div><div class="card"><b>درون زمین</b><p>لایه‌هایی با ویژگی‌ها و حالت‌های متفاوت.</p></div></div>
+</section>
+<section class="slide"><div class="kicker">۲ • راه شناخت</div><h2>امواج لرزه‌ای چه چیزی به ما می‌گویند؟</h2>
+<p>امواج لرزه‌ای هنگام زمین‌لرزه درون زمین منتشر می‌شوند. دانشمندان با بررسی سرعت عبور این امواج، درباره جنس و ویژگی لایه‌های زمین اطلاعات به دست می‌آورند.</p>
+<div class="grid"><div class="card"><b>سنگ‌های سخت و متراکم</b><p>امواج لرزه‌ای در آن‌ها سریع‌تر حرکت می‌کنند.</p></div><div class="card"><b>سنگ‌های نرم و کم‌تراکم</b><p>امواج لرزه‌ای در آن‌ها کندتر حرکت می‌کنند.</p></div></div>
+</section>
+<section class="slide"><div class="kicker">۳ • ساختار زمین</div><h2>زمین از سه لایهٔ اصلی تشکیل شده است</h2>
+<div class="earth"></div><div class="layers"><div class="layer">پوسته</div><div class="layer">گوشته</div><div class="layer">هسته</div></div>
+<p class="small">این تقسیم‌بندی بر اساس ترکیب مواد سازندهٔ زمین است.</p>
+</section>
+<section class="slide"><div class="kicker">۴ • لایهٔ بیرونی</div><h2>پوسته؛ خانهٔ ما</h2>
+<p>پوسته، بیرونی‌ترین لایهٔ زمین است و ما روی آن زندگی می‌کنیم. این لایه محل وجود بسیاری از منابع طبیعی است.</p>
+<div class="grid"><div class="card"><b>منابع زیرزمینی</b><p>نفت، گاز طبیعی و زغال‌سنگ</p></div><div class="card"><b>منابع دیگر</b><p>معادن و آب‌های زیرزمینی</p></div></div>
+</section>
+<section class="slide"><div class="kicker">۵ • لایهٔ میانی</div><h2>گوشته</h2>
+<p>گوشته لایه‌ای است که بین پوسته و هسته قرار دارد. بخش‌های مختلف گوشته از نظر حالت و ویژگی با یکدیگر تفاوت دارند.</p>
+<div class="note">در بررسی ساختمان زمین، دانشمندان فقط به ترکیب مواد توجه نمی‌کنند؛ حالت فیزیکی لایه‌ها هم مهم است.</div>
+</section>
+<section class="slide"><div class="kicker">۶ • لایه‌های مکانیکی</div><h2>سنگ‌کره و خمیرکره</h2>
+<div class="grid"><div class="card"><b>سنگ‌کره</b><p>از پوسته و بخش جامد بالایی گوشته تشکیل شده است؛ ضخامت آن حدود ۱۰۰ کیلومتر است و روی خمیرکره حرکت می‌کند.</p></div><div class="card"><b>خمیرکره</b><p>حالت خمیری دارد و تا عمق حدود ۳۵۰ کیلومتری ادامه می‌یابد. بسیاری از زمین‌لرزه‌ها و آتشفشان‌ها با این ناحیه ارتباط دارند.</p></div></div>
+</section>
+<section class="slide"><div class="kicker">۷ • بخش‌های عمیق‌تر</div><h2>گوشتهٔ زیرین و هسته</h2>
+<div class="grid"><div class="card"><b>گوشتهٔ زیرین</b><p>بخشی از گوشته است که در زیر خمیرکره قرار دارد و حالت جامد دارد.</p></div><div class="card"><b>هستهٔ خارجی</b><p>حالت مذاب دارد.</p></div><div class="card"><b>هستهٔ داخلی</b><p>با وجود دمای بسیار زیاد، جامد است.</p></div></div>
+</section>
+<section class="slide"><div class="kicker">۸ • یک مدل ساده</div><h2>زمین و تخم‌مرغ آب‌پز</h2>
+<p>در فعالیت کتاب، تخم‌مرغ آب‌پز را به عنوان یک مدل ساده برای مقایسه با لایه‌های زمین بررسی می‌کنیم.</p>
+<div class="grid"><div class="card"><b>پوستهٔ تخم‌مرغ</b><p>برای تصور کردن پوستهٔ زمین</p></div><div class="card"><b>سفیده</b><p>برای تصور کردن بخش میانی</p></div><div class="card"><b>زرده</b><p>برای تصور کردن بخش مرکزی</p></div></div>
+<p class="small">این فقط یک مدل آموزشی است؛ اندازه و جنس لایه‌های واقعی زمین با تخم‌مرغ یکسان نیست.</p>
+</section>
+<section class="slide"><div class="kicker">۹ • پدیده‌های زمین</div><h2>زمین‌لرزه و آتشفشان</h2>
+<div class="grid"><div class="card"><b>زمین‌لرزه</b><p>لرزش زمین بر اثر آزاد شدن ناگهانی انرژی درون زمین رخ می‌دهد.</p></div><div class="card"><b>آتشفشان</b><p>راهی برای خروج مواد داغ و گازها از درون زمین به سطح آن است.</p></div></div>
+<div class="note">آشنایی با این پدیده‌ها و رعایت نکات ایمنی، به آمادگی ما کمک می‌کند.</div>
+</section>
+<section class="slide"><div class="kicker">۱۰ • آتشفشان</div><h2>بخش‌های آتشفشان</h2>
+<div class="grid"><div class="card"><b>مخروط</b><p>بخش برجسته و کوه‌مانند آتشفشان</p></div><div class="card"><b>دهانه</b><p>بخش بازشده در بالای آتشفشان</p></div><div class="card"><b>دودکش</b><p>مسیر حرکت مواد از درون به سمت بالا</p></div><div class="card"><b>جریان گدازه</b><p>مواد مذاب خارج‌شده که روی سطح حرکت می‌کنند.</p></div></div>
+</section>
+<section class="slide"><div class="kicker">۱۱ • مرور درس</div><h2>سؤال‌های پایانی</h2>
+<div class="card"><b>۱.</b><p>دانشمندان با بررسی چه چیزی دربارهٔ لایه‌های درونی زمین اطلاعات به دست می‌آورند؟</p></div>
+<div class="card"><b>۲.</b><p>سه لایهٔ اصلی زمین از نظر ترکیب مواد کدام‌اند؟</p></div>
+<div class="card"><b>۳.</b><p>هستهٔ خارجی و هستهٔ داخلی چه تفاوتی از نظر حالت دارند؟</p></div>
+<div class="card"><b>۴.</b><p>چهار بخش آتشفشان را نام ببرید.</p></div>
+<p class="small">پاسخ‌ها را با مطالب همین درس کتاب علوم ششم بررسی کنید.</p>
+</section>
+<section class="slide" style="text-align:center;align-items:center">
+<div class="kicker">پایان سفر به اعماق زمین</div><h1>سپاس از توجه شما</h1>
+<h2 class="accent">ساخته شده توسط امیرعطا رزمی</h2>
+<p>امیدوارم از ارائه راضی باشید.</p>
+<div class="earth" style="width:180px"></div>
+</section>
+</div>
+<div class="controls"><button id="prev">→ قبلی</button><span class="count" id="count">۱ / ۱۲</span><button id="next">بعدی ←</button></div>
+<script>
+const slides=[...document.querySelectorAll('.slide')],count=document.getElementById('count'),progress=document.getElementById('progress');let i=0;
+const fa=n=>String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));count.textContent=fa(i+1)+' / '+fa(slides.length);progress.style.width=((i+1)/slides.length*100)+'%'}
+document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+document.addEventListener('keydown',e=>{if(['ArrowLeft',' ','PageDown'].includes(e.key))show(i+1);if(['ArrowRight','PageUp'].includes(e.key))show(i-1)});
+let x=null;document.addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{if(x===null)return;let d=e.changedTouches[0].clientX-x;if(Math.abs(d)>60)show(i+(d<0?1:-1));x=null},{passive:true});
+</script></body></html>
